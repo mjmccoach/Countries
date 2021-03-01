@@ -21,6 +21,9 @@ export default {
       countries: []
     }
   },
+  mounted() {
+    this.getCountries()
+  },
   methods: {
     getCountries: function() {
       fetch('https://restcountries.eu/rest/v2/all')
