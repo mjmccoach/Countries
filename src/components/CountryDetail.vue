@@ -1,9 +1,10 @@
 <template>
-  <h1>I'm the CountryDetail</h1>
+  <h1> {{ selectedCountry.name }} </h1>
 </template>
 
 <script>
 export default {
+    props : ["selectedCountry"]
 
 }
 </script>
