@@ -1,10 +1,17 @@
 <template>
   <div id="app">
+
     <label for="country_select">Select a Country:</label>
     <select id="country_select" v-model="selectedCountry">
       <option v-for="country in countries" :key="country.alpha3Code" :value="country">{{ country.name }}</option>
     </select>
+
+    <button v-on:click="addToFavourites">
+      Add to Favourites
+    </button>
+
     <country-detail v-if="selectedCountry" :selectedCountry="selectedCountry"/>
+
     <favourites-list/>
   </div>
 </template>
@@ -23,7 +30,8 @@ export default {
   data() {
     return {
       countries: [],
-      selectedCountry: null
+      selectedCountry: null,
+      favouriteCountries: []
     }
   },
   mounted() {
@@ -34,6 +42,9 @@ export default {
       fetch('https://restcountries.eu/rest/v2/all')
       .then(res => res.json())
       .then(countries => this.countries = countries);
+    },
+    addToFavourites: function() {
+      this.favouriteCountries.push(this.selectedCountry)
     }
   }
   
