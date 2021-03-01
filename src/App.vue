@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <label for="country_select">Select a Country:</label>
+    <select id="country_select" v-model="selectedCountry">
+      <option v-for="country in countries" :key="country.alpha3Code" value="country">{{ country.name }}</option>
+    </select>
     <country-detail/>
     <favourites-list/>
   </div>
