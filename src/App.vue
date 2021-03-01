@@ -12,7 +12,7 @@
 
     <country-detail v-if="selectedCountry" :selectedCountry="selectedCountry"/>
 
-    <favourites-list/>
+    <favourites-list :favouriteCountries="favouriteCountries"/>
   </div>
 </template>
 
