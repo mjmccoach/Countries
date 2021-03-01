@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <country-detail/>
+    <favourites-list/>
   </div>
 </template>
 
 <script>
 import CountryDetail from './components/CountryDetail.vue';
+import FavouritesList from './components/FavouritesList.vue';
+
 
 export default {
   name: 'App',
   components: {
-    CountryDetail : CountryDetail
+    CountryDetail : CountryDetail,
+    FavouritesList: FavouritesList
   }
 }
 </script>
