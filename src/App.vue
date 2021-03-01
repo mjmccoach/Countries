@@ -25,7 +25,7 @@ export default {
   name: 'App',
   components: {
     CountryDetail : CountryDetail,
-    FavouritesList: FavouritesList
+    'favourites-list': FavouritesList
   },
   data() {
     return {

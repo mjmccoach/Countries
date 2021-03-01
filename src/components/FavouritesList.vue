@@ -1,10 +1,16 @@
 <template>
-  <h1>I'm the FavouritesList</h1>
+  <div class="favourites-list">
+    <h1>Favourites List</h1>
+    <ul>
+        <li v-for="favouriteCountry in favouriteCountries" :key="favouriteCountry.alpha3Code"> {{ favouriteCountry.name }}</li>
+    </ul>
+
+  </div>
 </template>
 
 <script>
 export default {
-    proprs : ['favouriteCountries']
+    props : ['favouriteCountries']
 }
 </script>
 
