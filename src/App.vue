@@ -15,7 +15,20 @@ export default {
   components: {
     CountryDetail : CountryDetail,
     FavouritesList: FavouritesList
+  },
+  data() {
+    return {
+      countries: []
+    }
+  },
+  methods: {
+    getCountries: function() {
+      fetch('https://restcountries.eu/rest/v2/all')
+      .then(res => res.json())
+      .then(countries => this.countries = countries);
+    }
   }
+  
 }
 </script>
 
